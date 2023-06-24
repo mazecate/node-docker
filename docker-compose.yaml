@@ -1,0 +1,16 @@
+version: "3.1"
+
+services:
+  web:
+    image: foo:0.0.1
+    container_name: node-docker
+    restart: always
+    build: .
+    ports:
+      - "8000:8099"
+    networks:
+      - node-docker-network
+
+networks:
+  node-docker-network:
+    driver: bridge
